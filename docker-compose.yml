@@ -2,10 +2,12 @@ version: "3.7"
 
 services:
     webhook:
-        image: demo-nexus-webhook:0.0.1-SNAPSHOT
+        image: demo-nexus-webhook:0.0.2-SNAPSHOT
         container_name: webhook
         ports: 
             - '8080:8080'
+        environment:
+            - NEXUS_URL=http://nexus3:8081
     nexus3:
         ports:
             - '8081:8081'
